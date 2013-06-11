@@ -1,0 +1,19 @@
+1. implement a set of interfaces detailing the desired functionality of the Cytoscape FI plugin,
+   creating a blueprint for future development, a clear set of project goals, and leaving open the possibility
+   of custom scripting in the future.
+2. implement solutions in concrete classes which provide users the desired functionalities while
+   also allowing easily-accessible hooks for future scripting expansion
+3. Design a set of reactome data objects which make it simple to add, remove, and serialize attributes across
+   app sessions, while also allowing compatibility with the CyTable data structure.
+4. Provide a fast user experience by minimizing swing usage, efficiently bundling REST calls, possibly caching local
+   data, and employing the most efficient algorithms possible using the simplest primitives/types and functions.
+5. Provide room for expansion by making the interfaces and abstract classes minimalistically complete; provide the
+   necessary functionality without sacrificing future proofing or repeating code.
+   
+   Week of June 10-15
+   Mon: Build out interfaces for all previous functions
+   		-Selection
+   		-CyNetwork actions (show, hide, etc)
+   		-Reactome Actions (Call Reactome Server, build FI network,
+   			annotation helper, extracting data for tables, etc)
+   Tue: GUI Stuff: JavaFX/Cytoscape Tunables
