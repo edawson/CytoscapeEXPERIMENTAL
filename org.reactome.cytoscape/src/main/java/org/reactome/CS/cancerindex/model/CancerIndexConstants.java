@@ -1,4 +1,4 @@
-package org.reactome.cancerindex.model;
+package org.reactome.CS.cancerindex.model;
 
 public class CancerIndexConstants {
     public static final String CellineIndicator = "CellineIndicator"; 

@@ -2,7 +2,7 @@
  * Created on Jul 14, 2010
  *
  */
-package org.reactome.cancerindex.data;
+package org.reactome.CS.cancerindex.data;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,7 +54,7 @@ public class CancerIndexHibernateUtility {
         fu.close();
         String target = "src/org/reactome/cancerindex/model/CancerIndexConstants.java";
         fu.setOutput(target);
-        fu.printLine("package org.reactome.cancerindex.model;");
+        fu.printLine("package org.reactome.CS.cancerindex.model;");
         fu.printLine("");
         fu.printLine("public class CancerIndexConstants {");
         for (String name : nameList) {

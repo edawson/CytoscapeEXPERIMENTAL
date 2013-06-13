@@ -4,8 +4,6 @@
  */
 package org.reactome.CS.FIModel;
 
-import giny.model.Edge;
-import giny.model.Node;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,16 +33,19 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
+import org.cytoscape.model.CyEdge;
+import org.cytoscape.model.CyNode;
 import org.gk.persistence.DiagramGKBReader;
 import org.gk.render.RenderablePathway;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.DOMOutputter;
+import org.reactome.CS.cancerindex.model.Sentence;
 import org.reactome.CS.design.FINetworkService;
+import org.reactome.CS.internal.PlugInScopeObjectManager;
 import org.reactome.annotate.GeneSetAnnotation;
 import org.reactome.annotate.ModuleGeneSetAnnotation;
-import org.reactome.cancerindex.model.Sentence;
 import org.reactome.funcInt.FIAnnotation;
 import org.reactome.funcInt.Interaction;
 import org.reactome.r3.graph.NetworkClusterResult;
@@ -220,7 +221,7 @@ public class RESTFulFIService implements FINetworkService {
         return interactions;
     }
     
-    public NetworkClusterResult cluster(List<Edge> edges) throws Exception {
+    public NetworkClusterResult cluster(List<CyEdge> edges) throws Exception {
         String url = restfulURL + "network/cluster";
         String query = convertEdgesToString(edges);
         Element root = callInXML(url, query);
@@ -439,7 +440,7 @@ public class RESTFulFIService implements FINetworkService {
         return resultElm;
     }
     
-    public Map<String, FIAnnotation> annotate(List<Edge> edges) throws Exception {
+    public Map<String, FIAnnotation> annotate(List<CyEdge> edges) throws Exception {
         String url = restfulURL + "network/annotate";
         // Create a query
         String query = convertEdgesToString(edges);
@@ -455,17 +456,17 @@ public class RESTFulFIService implements FINetworkService {
         return edgeIdToAnnotation;
     }
 
-    private String convertEdgesToString(List<Edge> edges) {
+    private String convertEdgesToString(List<CyEdge> edges) {
         StringBuilder queryBuilder = new StringBuilder();
         int compare = 0;
-        for (Edge edge : edges) {
-            Node start = edge.getSource();
-            Node end = edge.getTarget();
-            queryBuilder.append(edge.getIdentifier()).append("\t");
+        for (CyEdge edge : edges) {
+            CyNode start = edge.getSource();
+            CyNode end = edge.getTarget();
+            queryBuilder.append(edge.getSUID()).append("\t");
             // Have to make sure the start id is less than end id based on conventions
             // we used in the server side
-            String startId = start.getIdentifier();
-            String endId = end.getIdentifier();
+            String startId = start.getSUID().toString();
+            String endId = end.getSUID().toString();
             compare = startId.compareTo(endId);
             if (compare < 0) {
                 queryBuilder.append(startId).append("\t");

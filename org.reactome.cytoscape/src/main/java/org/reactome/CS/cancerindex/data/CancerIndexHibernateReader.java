@@ -2,7 +2,7 @@
  * Created on Jul 15, 2010
  *
  */
-package org.reactome.cancerindex.data;
+package org.reactome.CS.cancerindex.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,9 +18,9 @@ import javax.xml.bind.Marshaller;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
-import org.reactome.cancerindex.model.DiseaseData;
-import org.reactome.cancerindex.model.Roles;
-import org.reactome.cancerindex.model.Sentence;
+import org.reactome.CS.cancerindex.model.DiseaseData;
+import org.reactome.CS.cancerindex.model.Roles;
+import org.reactome.CS.cancerindex.model.Sentence;
 import org.reactome.r3.util.InteractionUtilities;
 
 /**

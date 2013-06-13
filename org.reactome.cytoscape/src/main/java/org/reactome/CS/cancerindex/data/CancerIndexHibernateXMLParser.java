@@ -2,7 +2,7 @@
  * Created on Jul 14, 2010
  *
  */
-package org.reactome.cancerindex.data;
+package org.reactome.CS.cancerindex.data;
 
 import static javax.xml.stream.XMLStreamConstants.CHARACTERS;
 import static javax.xml.stream.XMLStreamConstants.END_DOCUMENT;
@@ -23,13 +23,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Test;
-import org.reactome.cancerindex.model.CancerIndexConstants;
-import org.reactome.cancerindex.model.DiseaseData;
-import org.reactome.cancerindex.model.GeneData;
-import org.reactome.cancerindex.model.GeneEntry;
-import org.reactome.cancerindex.model.Roles;
-import org.reactome.cancerindex.model.Sentence;
-import org.reactome.cancerindex.model.SequenceIdentificationCollection;
+import org.reactome.CS.cancerindex.model.CancerIndexConstants;
+import org.reactome.CS.cancerindex.model.DiseaseData;
+import org.reactome.CS.cancerindex.model.GeneData;
+import org.reactome.CS.cancerindex.model.GeneEntry;
+import org.reactome.CS.cancerindex.model.Roles;
+import org.reactome.CS.cancerindex.model.Sentence;
+import org.reactome.CS.cancerindex.model.SequenceIdentificationCollection;
 
 /**
  * This is a parser to cancer XML. Results from XML parsing have been saved into the database

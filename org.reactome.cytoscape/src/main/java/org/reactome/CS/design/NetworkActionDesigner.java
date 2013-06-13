@@ -1,4 +1,4 @@
-package org.reactome.CS.internal;
+package org.reactome.CS.design;
 
 public interface NetworkActionDesigner
 {
