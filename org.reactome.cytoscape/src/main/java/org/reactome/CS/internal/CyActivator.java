@@ -13,6 +13,7 @@ import org.cytoscape.util.swing.FileUtil;
 import org.cytoscape.util.swing.OpenBrowser;
 import org.cytoscape.view.model.CyNetworkViewFactory;
 import org.osgi.framework.BundleContext;
+import org.reactome.CS.internal.*;
 
 
 public class CyActivator extends AbstractCyActivator {
